@@ -24,8 +24,11 @@ class GameScene: SKScene {
         //Add a circle
         let ball = SKShapeNode(circleOfRadius: 20)
         ball.position = CGPoint(x: 100, y: 200)
+        ball.physicsBody = SKPhysicsBody(circleOfRadius: 20)
         addChild(ball)
         
+        //Make the edge of the scene be a boundary
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
 
     }
     
