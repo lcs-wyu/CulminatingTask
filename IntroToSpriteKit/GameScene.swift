@@ -27,6 +27,12 @@ class GameScene: SKScene {
         ball.physicsBody = SKPhysicsBody(circleOfRadius: 20)
         addChild(ball)
         
+        //Add a rectangle, this will represent the object that is being analyzed in this kinematics simulation
+        let object = SKShapeNode(rect: CGRect(x: 200, y: 200, width: 40, height: 40))
+        object.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 40, height: 40))
+        object.position = CGPoint(x: 200, y: 200)
+        addChild(object)
+        
         //Make the edge of the scene be a boundary
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
 
